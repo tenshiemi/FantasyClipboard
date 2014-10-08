@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Fantasy Team",
+  "version": "1.0",
+  "description": "Copy your Fantasy players to the clipboard.",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+    // "default_popup": "team.html"
+  },
+
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+  
+  "permissions": [
+    "<all_urls>",
+    "clipboardRead",
+    "clipboardWrite"
+    ]
+}
