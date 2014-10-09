@@ -20,14 +20,15 @@ function copyToClipboard( text ){
 
 function getTeam (tab) {
   // When we get a result back from the getTeam
-  // method, alert the data
+  // method, copy the team info to the clipboard
   injectedMethod(tab, 'getTeam', function (response) {
     var team = response.data;
     var mstring = ""
     for (var i = 0; i < team.length; i++) {
-    	mstring += (team[i].name + " (" + team[i].position + ") vs " + team[i].opponent) + " / ";
+    	mstring += ("* " + team[i].name + " (" + team[i].position + ") vs " + team[i].opponent) + "  ";
     }
     copyToClipboard(mstring);
+    alert("Copied team to clipboard!");
     return true;
   });
 }

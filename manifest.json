@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Fantasy Team",
+  "name": "Fantasy Clipper",
   "version": "1.0",
   "description": "Copy your Fantasy players to the clipboard.",
 
   "browser_action": {
     "default_icon": "icon.png"
-    // "default_popup": "team.html"
   },
 
   "background": {
@@ -16,7 +15,7 @@
   },
   
   "permissions": [
-    "<all_urls>",
+    "http://football.fantasysports.yahoo.com/",
     "clipboardRead",
     "clipboardWrite"
     ]
