@@ -25,10 +25,10 @@ function getTeam (tab) {
     var team = response.data;
     var mstring = ""
     for (var i = 0; i < team.length; i++) {
-    	mstring += ("* " + team[i].name + " (" + team[i].position + ") vs " + team[i].opponent) + "  ";
+      mstring += "* " + (team[i].name + " (" + team[i].position + ") vs " + team[i].opponent) + "  \r\n";
     }
     copyToClipboard(mstring);
-    alert("Copied team to clipboard!");
+    alert("Your team has been copied to the clipboard!");
     return true;
   });
 }

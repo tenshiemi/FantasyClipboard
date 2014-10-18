@@ -12,9 +12,12 @@ var injected = injected || (function(){
     if (node.getElementsByClassName('Nowrap name')[0] != undefined) {
       var n = node.getElementsByClassName('Nowrap name')[0].textContent;
       var p = node.getElementsByClassName('Fz-xxs')[0].textContent;
-      var o = node.getElementsByClassName('Inline')[0].textContent;
-      var s = node.getElementsByClassName('pos-label')[0].textContent;
-      var player = { name: n, position: p, opponent: o, slot: s };
+      if (node.getElementsByClassName('ysf-game-status ')[0].textContent == ' Bye'){
+        var o = 'Bye';
+      } else {
+        var o = node.getElementsByClassName('Inline')[0].textContent;
+      }
+      var player = { name: n, position: p, opponent: o };
       players.push(player)
     }
   }
