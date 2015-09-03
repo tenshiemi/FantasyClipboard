@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Fantasy Clipper",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Copy your Fantasy players to the clipboard.",
 
   "browser_action": {
@@ -13,7 +13,7 @@
     "scripts": ["event.js"],
     "persistent": false
   },
-  
+
   "permissions": [
     "http://football.fantasysports.yahoo.com/",
     "clipboardRead",
