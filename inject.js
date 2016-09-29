@@ -3,29 +3,24 @@ var injected = injected || (function() {
     var methods = {};
 
     methods.getTeam = function() {
-        var nodes = document.getElementsByClassName('editable');
+        var nodes = document.querySelectorAll('.editable:not(.empty-bench)');
         var players = [];
         // Loop through all the nodes
         for (var i = 0; i < nodes.length; i++) {
             var node = nodes[i];
 
-            // Grabs player info from each node
-            if (node.getElementsByClassName('Nowrap name')[0] !== undefined) {
-                var player;
-                var n = node.getElementsByClassName('Nowrap name')[0].textContent;
-                var p = node.getElementsByClassName('Fz-xxs')[0].textContent;
-                var o = '';
-                var matchup = node.getElementsByClassName('F-reset')[0];
+            var player = {};
 
-                if (matchup && matchup.textContent == ' Bye'){
-                    o = 'Bye';
-                } else {
-                    o = matchup.textContent;
-                }
+            var nameNode = node.getElementsByClassName('Nowrap name')[0];
+            var positionNode = node.getElementsByClassName('Fz-xxs')[0];
+            var gameInfo = node.querySelectorAll('.ysf-game-status > a');
 
-                player = { name: n, position: p, opponent: o };
-                players.push(player);
-            }
+            player = {
+                name: nameNode.textContent,
+                position: positionNode.textContent,
+                opponent: gameInfo.length === 0 ? 'Bye' : gameInfo[1].textContent,
+            };
+            players.push(player);
         }
         return players;
     };
