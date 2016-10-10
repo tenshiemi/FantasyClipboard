@@ -1,5 +1,4 @@
 var injected = injected || (function() {
-
     var methods = {};
 
     methods.getTeam = function() {
@@ -17,8 +16,9 @@ var injected = injected || (function() {
 
             player = {
                 name: nameNode.textContent,
-                position: positionNode.textContent,
-                opponent: gameInfo.length === 0 ? 'Bye' : gameInfo[1].textContent,
+                team: positionNode.textContent.split(' - ')[0],
+                position: positionNode.textContent.split(' - ')[1],
+                opponent: gameInfo.length === 0 ? 'Bye' : gameInfo[1].textContent
             };
             players.push(player);
         }
