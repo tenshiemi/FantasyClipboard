@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Fantasy Clipper",
-  "version": "2.0",
+  "version": "2.0.1",
   "description": "Copy your Fantasy players to the clipboard.",
   "browser_action": {
     "default_icon": "icon.png",
